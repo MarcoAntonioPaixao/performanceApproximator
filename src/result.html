@@ -6,10 +6,68 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Result</title>
   <link rel="stylesheet" type="text/css" media="screen" href="../lib/bootstrap.min.css" />
+  <link rel="stylesheet" href="../styles/result.css">
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid justify-content-center">
+      <div class="row">
+        <div class="p-3 col-xs-6 race">
+            VO2 Max: <span id="vo">Here goes the VO2</span>
+        </div>
+  
+        <div class="p-3 col-xs-6 race">
+            VAM: <span id="vam">Here goes the VAM</span> km/h
+        </div>
+      </div>
+      
 
+      <div class="container-fluid">
+          <div class="row">
+              <div class="p-3 col-xs-6 race"> 
+                  Enter the athlete's chosen race length:<br>
+                  <select name="raceLength" id="raceLength">
+                    <option value="10">10 km</option>
+                    <option value="21">21 km</option>
+                    <option value="42">42 km</option>
+                  </select>
+              </div>
+        
+              <div class="p-3 col-xs-6 race"> 
+                  Enter the athlete's expected performance in relating to his VAM:<br>
+                  <select name="percentage" id="percentage">
+                    <option value="60">60 %</option>
+                    <option value="70">70 %</option>
+                    <option value="80">80 %</option>
+                    <option value="90">90 %</option>
+                    <option value="100">100 %</option>
+                  </select>
+              </div>
+          </div>
+      </div>
+      
+      
+      <!-- add three predictions of the time based on the selectors and the VAM -->
+
+      <div class="container-fluid">
+        <div class="row">
+            <div class="p-3 prediction col-xs-4">
+              <span id="titulo">Otimista</span><br>
+              <span id="otimistaMinutos">tantos</span> minutos<br>
+              <span id="otimistaSegundos">tantos</span> segundos
+            </div>
+            <div class="p-3 prediction col-xs-4">
+                <span id="titulo">Média</span><br>
+              <span id="mediaMinutos">tantos</span> minutos<br>
+              <span id="mediaSegundos">tantos</span> segundos
+            </div>
+            <div class="p-3 prediction col-xs-4">
+                <span id="titulo">Conservadora</span><br>
+              <span id="conservadoraMinutos">tantos</span> minutos<br>
+              <span id="conservadoraSegundos">tantos</span> segundos
+            </div>
+        </div>
+      </div>
+      
     </div>
     <script src="result.js"></script>
 </body>

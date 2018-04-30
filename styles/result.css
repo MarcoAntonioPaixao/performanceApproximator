@@ -1,0 +1,13 @@
+.prediction{
+  width: 30%;
+  text-align: center;
+}
+
+.race{
+  width: 45%;
+  text-align: center;
+}
+
+#titulo {
+  font-weight: bold;
+}
