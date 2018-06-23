@@ -1,11 +1,8 @@
-const athleteAge = localStorage.getItem('age');
 const athleteHeight = localStorage.getItem('height');
 const athleteWeight = localStorage.getItem('weight');
-const gender = localStorage.getItem('gender');
 const stringMinutes = localStorage.getItem('minutes');
 const stringSeconds = localStorage.getItem('seconds');
 
-const age = parseInt(athleteAge, 10);
 const weight = parseInt(athleteWeight, 10);
 const height = parseInt(athleteHeight, 10);
 const minutes = parseInt(stringMinutes, 10);
@@ -21,13 +18,8 @@ let conservativeMinutes;
 let conservativeSeconds;
 
 const time = minutes + (seconds/60);
-console.log(time);
-// console.log(age);
-// console.log(height);
-// console.log(weight);
 
-const IMC = weight / Math.pow(height, 2);
-//console.log(IMC);
+const IMC = weight / Math.pow(height/100, 2);
 
 let VOMAX = ((1600 / time)*0.177)+8.101;
 
@@ -35,6 +27,7 @@ let VAM = (VOMAX) / 3.5;
 
 document.getElementById('vo').textContent =  VOMAX.toFixed(2);
 document.getElementById('vam').textContent = VAM.toFixed(2);
+document.getElementById('imc').textContent = IMC.toFixed(2);
 
 function calculatePrediction() {
   let numLength = parseInt(length);

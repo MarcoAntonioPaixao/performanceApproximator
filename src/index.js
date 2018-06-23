@@ -1,7 +1,5 @@
 const athleteWeight = document.getElementById('weight');
 const athleteHeight = document.getElementById('height');
-const athleteAge = document.getElementById('age');
-const athleteGender = document.getElementById('gender');
 const timeMinutes = document.getElementById('minutes');
 const timeSeconds = document.getElementById('seconds');
 
@@ -17,15 +15,6 @@ athleteHeight.addEventListener("change", function ( ) {
   console.log(this.value);
 });
 
-athleteAge.addEventListener("change", function() {
-  localStorage.setItem('age', this.value);
-  console.log(this.value);
-});
-
-athleteGender.addEventListener("change", function() {
-  localStorage.setItem('gender', this.value);
-  console.log(this.value);
-});
 
 timeMinutes.addEventListener("change", function() {
   localStorage.setItem('minutes', this.value);
