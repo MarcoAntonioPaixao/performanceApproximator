@@ -36,23 +36,33 @@ function calculatePrediction() {
   mediumMinutes = Math.floor(predictedTime);
   mediumSeconds = predictedTime - Math.floor(predictedTime);
   
-  let temp = predictedTime + (predictedTime * 0.05);
+  let temp = predictedTime - (predictedTime * 0.05);
   optimistMinutes = Math.floor(temp);
   optimistSeconds = temp - Math.floor(temp);
+  optimistSeconds *= 60;
+  if(optimistSeconds > 1){
+    optimistMinutes++;
+    optimistSeconds -= 1;
+  }
 
-  temp = predictedTime - (predictedTime * 0.05);
+  temp = predictedTime + (predictedTime * 0.05);
   conservativeMinutes = Math.floor(temp);
   conservativeSeconds = temp - Math.floor(temp);
+  conservativeSeconds *= 60;
+  if(conservativeSeconds > 1){
+    conservativeMinutes++;
+    conservativeSeconds -= 1;
+  }
   setPrediction();
 }
 
 function setPrediction() {
   document.getElementById('otimistaMinutos').textContent = optimistMinutes;
-  document.getElementById('otimistaSegundos').textContent = (optimistSeconds.toFixed(2))*100;
+  document.getElementById('otimistaSegundos').textContent = Math.round(optimistSeconds.toFixed(2));
   document.getElementById('mediaMinutos').textContent = mediumMinutes;
-  document.getElementById('mediaSegundos').textContent = (mediumSeconds.toFixed(2))*100;
+  document.getElementById('mediaSegundos').textContent = Math.round(mediumSeconds.toFixed(2));
   document.getElementById('conservadoraMinutos').textContent = conservativeMinutes;
-  document.getElementById('conservadoraSegundos').textContent = (conservativeSeconds.toFixed(2))*100;
+  document.getElementById('conservadoraSegundos').textContent = Math.round(conservativeSeconds.toFixed(2));
 }
 
 calculatePrediction();
